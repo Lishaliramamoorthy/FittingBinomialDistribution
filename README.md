@@ -30,6 +30,7 @@ The following are criteria for a frequency distribution to be a binomial distrib
 # Developed by
 # Register Number:212220230028
 # Name:Lishali R
+```
 import numpy as np
 import math
 import scipy.stats
@@ -59,6 +60,7 @@ if cal_chi2<tab_chi2:
     print("The given data can be fitted in binomial distribution at 1% LOS")
 else:
     print("The given data cannot be fitted in binomial distribution at 1% LOS")import numpy as np
+```    
 
 
 
