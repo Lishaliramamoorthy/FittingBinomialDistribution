@@ -59,7 +59,7 @@ print("Table value of Chi square at 1  level is %4.2f"%tab_chi2)
 if cal_chi2<tab_chi2:
     print("The given data can be fitted in binomial distribution at 1% LOS")
 else:
-    print("The given data cannot be fitted in binomial distribution at 1% LOS")import numpy as np
+    print("The given data cannot be fitted in binomial distribution at 1% LOS")
 ```    
 
 
