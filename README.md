@@ -25,12 +25,11 @@ The following are criteria for a frequency distribution to be a binomial distrib
 
 ![image](https://user-images.githubusercontent.com/104613195/166250867-46571ef5-f77b-4658-86ce-1c60c52fdfb1.png)
 
-# Program :
+# Program
+```python
+# Developed by: R.Lishali
+# Register Number: 212220230028
 
-# Developed by
-# Register Number:212220230028
-# Name:Lishali R
-```
 import numpy as np
 import math
 import scipy.stats
@@ -42,32 +41,28 @@ N=np.sum(f)
 mean=np.inner(X,f)/N
 p=mean/n
 q=1-p
-Pr=list(); E=list(); xi=list()
-print("  X P(X=x) Obs.Fr  Ex.Fre   xi ")
+Proba=list(); E=list(); xi=list()
+print("  X P(X=x) Observed.Freq  Expexted.Freq   xi ")
 print("----------------------------------")
 for x in range(7):
-    c=math.factorial(n)/(math.factorial(x)*math.factorial(n-x))
-    Pr.append(c*p*x*q*(n-x))
-    E.append(Pr[x]*N)
+    d=math.factorial(n)/(math.factorial(x)*math.factorial(n-x))
+    Proba.append(d*p**x*q**(n-x))
+    E.append(Proba[x]*N)
     xi.append((f[x]-E[x])**2/E[x])
-    print("%2.2f %2.2f  %4.2f   %3.2f  %3.2f"%(x,Pr[x],f[x],E[x],xi[x]))
+    print("%2.2f %2.2f  %4.2f   %3.2f  %3.2f"%(x,Proba[x],f[x],E[x],xi[x]))
 print("----------------------------------")
-cal_chi2=np.sum(xi)
-print("Calculated value of Chi square is %4.2f"%cal_chi2)
-tab_chi2=scipy.stats.chi2.ppf(1-.01, df=n)
-print("Table value of Chi square at 1  level is %4.2f"%tab_chi2)
-if cal_chi2<tab_chi2:
+cal_chi2_sq=np.sum(xi)
+print("Calculated value of Chi square is %4.2f"%cal_chi2_sq)
+tab_chi2_sq=scipy.stats.chi2.ppf(1-.01, df=n)
+print("Table value of Chi square at 1  level is %4.2f"%tab_chi2_sq)
+if cal_chi2_sq<tab_chi2_sq:
     print("The given data can be fitted in binomial distribution at 1% LOS")
 else:
     print("The given data cannot be fitted in binomial distribution at 1% LOS")
-```    
+```
+
+# Results and Output : 
+![image](https://user-images.githubusercontent.com/75235293/166467484-ea4ca8b4-20b3-4820-9be6-6c2f85ade44a.png)
 
 
-
-# Output : 
-
-
-![output exp 1](https://user-images.githubusercontent.com/75237886/166471653-1107f9fe-176f-4223-84d2-7253f3a8cd5c.png)
-
-# Result :
-Thus, fitting poisson distribution for the given frequencey distribution is verified.
+<br>Hence, a program was implemented to fit a binomial distribution for the given frequency distribution
